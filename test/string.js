@@ -76,4 +76,11 @@ describe('String', function() {
         });
         go(schema, done);
     });
+
+    it('should be able to generate a string from valid options', function(done) {
+        var schema = Joi.object({
+            position: Joi.string().valid('first', 'second', 'third')
+        });
+        go(schema, done);
+    });
 });
