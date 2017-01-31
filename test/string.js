@@ -83,4 +83,11 @@ describe('String', function() {
         });
         go(schema, done);
     });
+
+    it('should be able to generate a lowercase string', function(done) {
+        var schema = Joi.object({
+            name: Joi.string().lowercase().options({ convert: false })
+        });
+        go(schema, done);
+    });
 });
