@@ -1,6 +1,6 @@
 'use strict';
 var Joi = require('joi');
-var generate = new require('../').Generate();
+var generate = new require('../').Generate().generate;
 
 describe('String', function() {
 
