@@ -1,13 +1,14 @@
 'use strict';
 var Joi = require('joi');
-var generate = new require('../').Generate();
+var joiGenerator = new require('../').Generator();
+
 require('should');
 
 describe('Any', function() {
 
     it('should generate something to pass the any validation', function(done) {
         var schema = Joi.any();
-        generate(schema, function(err, model) {
+        joiGenerator.generate(schema, function(err, model) {
             if (err) {
                 return done(err);
             }

@@ -8,5 +8,5 @@
 
 'use strict';
 module.exports = {
-    Generate: require('./lib/generate')
+    Generator: require('./lib/generate')
 };

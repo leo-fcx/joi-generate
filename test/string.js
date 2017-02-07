@@ -1,16 +1,18 @@
 'use strict';
 var Joi = require('joi');
-var generate = new require('../').Generate().generate;
+var joiGenerator = new require('../').Generator();
 
 describe('String', function() {
 
     var go = function(schema, done) {
-        generate(schema, function(err, model) {
+        joiGenerator.generateAll(schema, function(err, model) {
             if (err) {
                 return done(err);
             }
-            var error = Joi.validate(model, schema);
+            // console.log(model);
+            var error = Joi.validate(model.valid, schema);
             done(error.error);
+            // done();
         });
     };
 

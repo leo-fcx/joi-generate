@@ -1,13 +1,14 @@
 'use strict';
 var Joi = require('joi');
 var async = require('async');
-var generate = new require('../').Generate();
+var joiGenerator = new require('../').Generator();
+
 require('should');
 
 describe('Array', function() {
 
-    var go = function(schema, done) {
-        generate(schema, function(err, model) {
+    var go = function(schema, done, printModel) {
+        joiGenerator.generate(schema, function(err, model) {
             if (err) {
                 return done(err);
             }

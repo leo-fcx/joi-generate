@@ -1,13 +1,14 @@
 'use strict';
 var Joi = require('joi');
-var generate = new require('../').Generate();
+var joiGenerator = new require('../').Generator();
+
 require('should');
 
 describe('Object', function() {
 
     it('should generate an object', function(done) {
         var schema = Joi.object({});
-        generate(schema, function(err, model) {
+        joiGenerator.generate(schema, function(err, model) {
             if (err) {
                 return done(err);
             }

@@ -1,6 +1,7 @@
 'use strict';
 var Joi = require('joi');
-var generate = new require('../').Generate();
+var joiGenerator = new require('../').Generator();
+
 require('should');
 
 describe('Object', function() {
@@ -9,7 +10,7 @@ describe('Object', function() {
         var schema = Joi.object({
             data: [Joi.number(), Joi.string().max(2)]
         });
-        generate(schema, function(err, model) {
+        joiGenerator.generate(schema, function(err, model) {
             if (err) {
                 return done(err);
             }
