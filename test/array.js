@@ -7,7 +7,7 @@ require('should');
 
 describe('Array', function() {
 
-    var go = function(schema, done, printModel) {
+    var go = function(schema, done) {
         joiGenerator.generate(schema, function(err, model) {
             if (err) {
                 return done(err);

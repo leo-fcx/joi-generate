@@ -9,10 +9,8 @@ describe('String', function() {
             if (err) {
                 return done(err);
             }
-            // console.log(model);
             var error = Joi.validate(model.valid, schema);
             done(error.error);
-            // done();
         });
     };
 
